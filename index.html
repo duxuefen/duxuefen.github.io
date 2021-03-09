@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/08/test-my-sit/">test_my_sit</a>
+      <a class="p-name article-title" href="/2021/03/08/test-my-sit/">自己总结的知识</a>
     </h1>
   
 
@@ -93,62 +93,98 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="java："><a href="#java：" class="headerlink" title="java："></a>java：</h1><p>JDK和jre和JVM： </p>
+<p>java三大特性：封装，继承，多态</p>
+<p>重载和重写：</p>
+<p>抽象类和接口：为啥会使用抽象类？</p>
+<h2 id="集合：ArrayList-特别重要的HashMap："><a href="#集合：ArrayList-特别重要的HashMap：" class="headerlink" title="集合：ArrayList  特别重要的HashMap："></a>集合：ArrayList  特别重要的<strong>HashMap</strong>：</h2><p>Java集合中实际存放的只是对象的引用，每个集合元素都是一个引用变量，实际内容都放在堆内存或者方法区里面，但是基本数据类型是在栈内存上分配空间的，栈上的数据随时就会被收回的。</p>
+<h3 id="list集合：有序，可重复，元素有下标"><a href="#list集合：有序，可重复，元素有下标" class="headerlink" title="list集合：有序，可重复，元素有下标"></a>list集合：有序，可重复，元素有下标</h3><h4 id="ArrayList-基于数组"><a href="#ArrayList-基于数组" class="headerlink" title="ArrayList:基于数组"></a>ArrayList:基于数组</h4><p><strong>建议给一个初始化的值，减少扩容的次数</strong>，如果new 时参数为空，先创建一个空的对象数组，第一次执行add()会变为默认容量10；</p>
+<p> 扩容1.5倍(先检查数组长度为几，然后超过规定的长度，需要扩容，<strong>扩容机制：</strong>是你的初始化容量右移一位，相当于扩容原容量的1.5倍）</p>
+<p>优点：查询效率高：ArrayLIst是连续存放元素的，找到第一个元素的首地址，再加上每个元素的占据的字节大小就能定位到对应的元素。</p>
+<p>缺点：随机增删效率低，无法存储较大的数量（无法找到一个很大的连续存储空间）</p>
+<h4 id="vector：基于数组，线程安全"><a href="#vector：基于数组，线程安全" class="headerlink" title="vector：基于数组，线程安全"></a>vector：基于数组，线程安全</h4><p>每个方法加了synchronize关键字</p>
+<p>初始容量为10，扩容为2倍</p>
+<h4 id="Linklist：基于双向链表"><a href="#Linklist：基于双向链表" class="headerlink" title="Linklist：基于双向链表"></a>Linklist：基于双向链表</h4><h3 id="set集合："><a href="#set集合：" class="headerlink" title="set集合："></a>set集合：</h3><h4 id="Hashset"><a href="#Hashset" class="headerlink" title="Hashset:"></a>Hashset:</h4><h4 id="Treeset："><a href="#Treeset：" class="headerlink" title="Treeset："></a>Treeset：</h4><h3 id="Map集合："><a href="#Map集合：" class="headerlink" title="Map集合："></a>Map集合：</h3><h4 id="Hashmap："><a href="#Hashmap：" class="headerlink" title="Hashmap："></a>Hashmap：</h4><p>1.7之前：数组+单链表</p>
+<p>1.8 之后：数组+单链表+红黑树</p>
+<h4 id="TreeMap："><a href="#TreeMap：" class="headerlink" title="TreeMap："></a>TreeMap：</h4><p>底层是二叉树，默认是由小到大排序</p>
+<h2 id="IO流："><a href="#IO流：" class="headerlink" title="IO流："></a>IO流：</h2><h3 id="基本的架构"><a href="#基本的架构" class="headerlink" title="基本的架构"></a>基本的架构</h3><h3 id="文件专属"><a href="#文件专属" class="headerlink" title="文件专属"></a>文件专属</h3><h4 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h4><h4 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h4><h4 id="FileReader"><a href="#FileReader" class="headerlink" title="FileReader"></a>FileReader</h4><h4 id="FileWriter"><a href="#FileWriter" class="headerlink" title="FileWriter"></a>FileWriter</h4><h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><h4 id="DataInputStream"><a href="#DataInputStream" class="headerlink" title="DataInputStream"></a>DataInputStream</h4><h3 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h3><h4 id="InputStreamReader"><a href="#InputStreamReader" class="headerlink" title="InputStreamReader"></a>InputStreamReader</h4><h3 id="标准输出"><a href="#标准输出" class="headerlink" title="标准输出"></a>标准输出</h3><h4 id="PrintStream"><a href="#PrintStream" class="headerlink" title="PrintStream"></a>PrintStream</h4><h4 id="PrintWriter"><a href="#PrintWriter" class="headerlink" title="PrintWriter"></a>PrintWriter</h4><p>public class <strong>PrintWriter</strong> extends Writer:将对象的格式化的表示形式打印到文本输出流中。这个类实现了所有发现的 print PrintStream方法</p>
+<h3 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h3><h4 id="BufferedInputStream"><a href="#BufferedInputStream" class="headerlink" title="BufferedInputStream"></a>BufferedInputStream</h4><h4 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h4><h3 id="对象专属流"><a href="#对象专属流" class="headerlink" title="对象专属流"></a>对象专属流</h3><h4 id="ObjectInputStream"><a href="#ObjectInputStream" class="headerlink" title="ObjectInputStream"></a>ObjectInputStream</h4><h4 id="ObjectOutputStream"><a href="#ObjectOutputStream" class="headerlink" title="ObjectOutputStream"></a>ObjectOutputStream</h4><h3 id="IO流和NIO的区别"><a href="#IO流和NIO的区别" class="headerlink" title="IO流和NIO的区别"></a>IO流和NIO的区别</h3><h2 id="多线程："><a href="#多线程：" class="headerlink" title="多线程："></a>多线程：</h2><h2 id="JVM的考点"><a href="#JVM的考点" class="headerlink" title="JVM的考点:"></a>JVM的考点:</h2><p>HotSpot虚拟机：</p>
+<p><img src="https://typora-1303972003.cos.ap-beijing.myqcloud.com/774371-20190625165606099-684954765.jpg" alt="img"></p>
+<p><strong>①类加载检查：</strong> 虚拟机遇到一条 new 指令时，首先将去检查这个指令的参数是否能在常量池中定位到这个类的符号引用，并且检查这个符号引用代表的类是否已被加载过、解析和初始化过。如果没有，那必须先执行相应的类加载过程。</p>
+<p><strong>②分配内存：</strong> 在<strong>类加载检查</strong>通过后，接下来虚拟机将为新生对象<strong>分配内存</strong>。对象所需的内存大小在类加载完成后便可确定，为对象分配空间的任务等同于把一块确定大小的内存从 Java 堆中划分出来。<strong>分配方式</strong>有 <strong>“指针碰撞”</strong> 和 <strong>“空闲列表”</strong> 两种，<strong>选择那种分配方式由 Java 堆是否规整决定，而Java堆是否规整又由所采用的垃圾收集器是否带有压缩整理功能决定</strong>。</p>
+<p><strong>内存分配的两种方式：（补充内容，需要掌握）</strong></p>
+<p>选择以上两种方式中的哪一种，取决于 Java 堆内存是否规整。而 Java 堆内存是否规整，取决于 GC 收集器的算法是”标记-清除”，还是”标记-整理”（也称作”标记-压缩”），值得注意的是，复制算法内存也是规整的</p>
+<p><img src="https://typora-1303972003.cos.ap-beijing.myqcloud.com/774371-20190625165620681-1534548019.jpg" alt="img"></p>
+<p><strong>内存分配并发问题（补充内容，需要掌握）</strong></p>
+<p>在创建对象的时候有一个很重要的问题，就是线程安全，因为在实际开发过程中，创建对象是很频繁的事情，作为虚拟机来说，必须要保证线程是安全的，通常来讲，虚拟机采用两种方式来保证线程安全：</p>
+<p>•<strong>CAS+失败重试：</strong> CAS 是乐观锁的一种实现方式。所谓乐观锁就是，每次不加锁而是假设没有冲突而去完成某项操作，如果因为冲突失败就重试，直到成功为止。<strong>虚拟机采用 CAS 配上失败重试的方式保证更新操作的原子性。</strong>•<strong>TLAB：</strong> 为每一个线程预先在Eden区分配一块儿内存，JVM在给线程中的对象分配内存时，首先在TLAB分配，当对象大于TLAB中的剩余内存或TLAB的内存已用尽时，再采用上述的CAS进行内存分配</p>
+<p><strong>③初始化零值：</strong> 内存分配完成后，虚拟机需要将分配到的内存空间都初始化为零值（不包括对象头），这一步操作保证了对象的实例字段在 Java 代码中可以不赋初始值就直接使用，程序能访问到这些字段的数据类型所对应的零值。</p>
+<p><strong>④设置对象头：</strong> 初始化零值完成之后，<strong>虚拟机要对对象进行必要的设置</strong>，例如这个对象是那个类的实例、如何才能找到类的元数据信息、对象的哈希吗、对象的 GC 分代年龄等信息。 <strong>这些信息存放在对象头中。</strong> 另外，根据虚拟机当前运行状态的不同，如是否启用偏向锁等，对象头会有不同的设置方式。</p>
+<p><strong>⑤执行 init 方法：</strong> 在上面工作都完成之后，从虚拟机的视角来看，一个新的对象已经产生了，但从 Java 程序的视角来看，对象创建才刚开始，<code>&lt;init&gt;</code> 方法还没有执行，所有的字段都还为零。所以一般来说，执行 new 指令之后会接着执行 <code>&lt;init&gt;</code> 方法，把对象按照程序员的意愿进行初始化，这样一个真正可用的对象才算完全产生出来。</p>
+<h3 id="3-3-对象的访问定位"><a href="#3-3-对象的访问定位" class="headerlink" title="3.3 对象的访问定位"></a>3.3 对象的访问定位</h3><p>建立对象就是为了使用对象，我们的Java程序通过栈上的 reference 数据来操作堆上的具体对象。对象的访问方式有虚拟机实现而定，目前主流的访问方式有<strong>①使用句柄</strong>和<strong>②直接指针</strong>两种：</p>
+<p>•<strong>句柄：</strong> 如果使用句柄的话，那么Java堆中将会划分出一块内存来作为句柄池，reference 中存储的就是对象的句柄地址，而句柄中包含了对象实例数据与类型数据各自的具体地址信息；</p>
+<p><img src="https://img2018.cnblogs.com/blog/774371/201906/774371-20190625165639416-600429715.jpg" alt="img"></p>
+<ul>
+<li><strong>直接指针****：</strong> 如果使用直接指针访问，那么 Java 堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，而reference 中存储的直接就是对象的地址。</li>
+</ul>
+<p><img src="https://img2018.cnblogs.com/blog/774371/201906/774371-20190625165652608-1144274613.jpg" alt="img"></p>
+<p><strong>这两种对象访问方式各有优势。使用句柄来访问的最大好处是 reference 中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而 reference 本身不需要修改。使用直接指针访问方式最大的好处就是速度快，它节省了一次指针定位的时间开销。</strong></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>本地方法栈：<strong>拟机栈为虚拟机执行 Java 方法 （也就是字节码）服务，而本地方法栈则为虚拟机使用到的 Native 方法服务。</strong></p>
+<p>堆：Java 虚拟机所管理的内存中最大的一块，Java 堆是<strong>所有线程共享的一块内存区域</strong>，在虚拟机启动时创建。<strong>此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例以及数组都在这里分配内存。</strong></p>
+<p>方法区：<strong>方法区与 Java 堆一样，是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做 Non-Heap（非堆），目的应该是与 Java 堆区分开来</strong></p>
+<p>JDK 1.8 的时候，方法区被彻底移除了（JDK1.7就已经开始了），取而代之是元空间，元空间使用的是直接内存。</p>
+<h2 id="垃圾处理的算法："><a href="#垃圾处理的算法：" class="headerlink" title="垃圾处理的算法："></a>垃圾处理的算法：</h2><h2 id="反射："><a href="#反射：" class="headerlink" title="反射："></a>反射：</h2><h1 id="Java有关数据连接的问题"><a href="#Java有关数据连接的问题" class="headerlink" title="Java有关数据连接的问题"></a>Java有关数据连接的问题</h1><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><h1 id="设计模式："><a href="#设计模式：" class="headerlink" title="设计模式："></a>设计模式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设计模式有23种，表示类与类之间的构架关系，表示对象的逻辑关系</span><br><span class="line"></span><br><span class="line">使用这些优秀的模式去搭建你的程序 无论从效率上还是可读性上，都给人一种很舒服的感觉。</span><br><span class="line"></span><br><span class="line">设计模式，即软件架构、实现思路，一方面便于后期扩展，二方面便于研发</span><br></pre></td></tr></table></figure>
+
+<h2 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h2><p>Java应用程序中，一个类Class只有一个实例存在。 使用Singleton的好处还在于可以<strong>节省内存</strong>，因为它限制了实例的个数，有利于Java垃圾回收（garbage collection）。</p>
+<h3 id="应用："><a href="#应用：" class="headerlink" title="应用："></a>应用：</h3><p>把这个计数器设计为一个全局对象，所有人都共用同一份数据，就可以避免类似的问题，这就是我们所说的单例模式的其中的一种应用。</p>
+<h3 id="单例模式主要有3个特点，："><a href="#单例模式主要有3个特点，：" class="headerlink" title="单例模式主要有3个特点，："></a>单例模式主要有3个特点，：</h3><p>1、单例类确保自己只有一个实例。</p>
+<p>2、单例类必须自己创建自己的实例。</p>
+<p>3、单例类必须为其他对象提供唯一的实例。</p>
+<h3 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h3><p>第一、控制资源的使用，通过线程同步来控制资源的并发访问；</p>
+<p>第二、控制实例产生的数量，达到节约资源的目的。</p>
+<p>第三、作为通信媒介使用，也就是数据共享，它可以在不建立直接关联的条件下，让多个不相关的两个线程或者进程之间实现通信。</p>
+<h3 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h3><p>懒汉式：它的特点是运行时获得对象的速度比较慢，但加载类的时候比较快。它在整个应用的生命周期只有一部分时间在占用资源</p>
+<p>饿汉模式，它的特点是加载类的时候比较慢，但运行时获得对象的速度比较快。它从加载到应用结束会一直占用资源</p>
+<p>工厂模式属于创建型模式，他提供了一种<strong>创建对象</strong>的最佳方式，工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
+<p>根据产品是<strong>具体产品</strong>还是<strong>具体工厂</strong>可分为<strong>简单工厂模式</strong>和<strong>工厂方法模式</strong></p>
+<p>根据<strong>工厂的抽象程度</strong>可分为<strong>工厂方法模式</strong>和<strong>抽象工厂模式</strong></p>
+<h2 id="工厂模式："><a href="#工厂模式：" class="headerlink" title="工厂模式："></a>工厂模式：</h2><h3 id="1-简单工厂模式"><a href="#1-简单工厂模式" class="headerlink" title="1. 简单工厂模式"></a>1. 简单工厂模式</h3><p>该模式通过向工厂传递类型来指定要创建的对象，其UML类图如下：</p>
+<p><img src="https://typora-1303972003.cos.ap-beijing.myqcloud.com/1419489-20190628144601084-563759643.png" alt="img"></p>
+<h3 id="2-工厂方法模式-Factory-Method"><a href="#2-工厂方法模式-Factory-Method" class="headerlink" title="2. 工厂方法模式(Factory Method)"></a>2. 工厂方法模式(Factory Method)</h3><p>工厂方法模式将<strong>生成具体产品的任务</strong>分发给<strong>具体的产品工厂</strong>，其UML类图如下：</p>
+<p><img src="https://typora-1303972003.cos.ap-beijing.myqcloud.com/1419489-20190628154133368-906051111.png" alt="img"></p>
+<p>也就是定义一个<strong>抽象工厂</strong>，其定义了产品的生产接口，但不负责具体的产品，将生产任务交给不同的<strong>派生类工厂</strong>。这样不用通过指定类型来创建对象了。</p>
+<h3 id="3-抽象工厂模式-Abstract-Factory"><a href="#3-抽象工厂模式-Abstract-Factory" class="headerlink" title="3. 抽象工厂模式(Abstract Factory)"></a>3. 抽象工厂模式(Abstract Factory)</h3><p>抽象工厂模式通过在<strong>AbstarctFactory中增加创建产品的接口</strong>，并在<strong>具体子工厂中实现新加产品的创建</strong>，</p>
+<p><img src="https://img2018.cnblogs.com/blog/1419489/201906/1419489-20190628170705865-1781414242.png" alt="img"></p>
+<p><strong>新加产品需要修改已定义好的工厂相关的类，因此对于产品和工厂的扩展不太友好，利弊需要权衡一下。</strong> </p>
+<h2 id="代理模式："><a href="#代理模式：" class="headerlink" title="代理模式："></a>代理模式：</h2><h3 id="1-静态代理："><a href="#1-静态代理：" class="headerlink" title="1.静态代理："></a>1.静态代理：</h3><h3 id="2-动态代理"><a href="#2-动态代理" class="headerlink" title="2.动态代理"></a>2.动态代理</h3><h2 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h2><p>答：装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口</p>
+<pre><code>    装饰对象持有被装饰对象的实例。**例：缓冲流**
+</code></pre>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="MySQL数据库"><a href="#MySQL数据库" class="headerlink" title="MySQL数据库"></a>MySQL数据库</h2><p>索引</p>
+<p>四个操作，聚合函数</p>
+<p>优化数据库：</p>
+<h2 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h2><p>特点：</p>
+<h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><p>五大基本数据类型：<br>命令</p>
+<h2 id="有关索引的问题"><a href="#有关索引的问题" class="headerlink" title="有关索引的问题"></a>有关索引的问题</h2><h1 id="Spring的知识"><a href="#Spring的知识" class="headerlink" title="Spring的知识"></a>Spring的知识</h1><p>IOC：</p>
+<p>AOP:</p>
+<h3 id="注解：autoweird"><a href="#注解：autoweird" class="headerlink" title="注解：autoweird"></a>注解：autoweird</h3><h1 id="springMVC："><a href="#springMVC：" class="headerlink" title="springMVC："></a>springMVC：</h1><p>过程： </p>
+<p>注解：requestMapping：</p>
+<h1 id="springboot："><a href="#springboot：" class="headerlink" title="springboot："></a>springboot：</h1><p>原理：</p>
+<p>解释：</p>
+<p>常用的注解：</p>
+<h1 id="Mybatis："><a href="#Mybatis：" class="headerlink" title="Mybatis："></a>Mybatis：</h1><p>动态SQL</p>
+<p>一二级缓存：</p>
+<h1 id="SpringCLoud微服务的知识："><a href="#SpringCLoud微服务的知识：" class="headerlink" title="SpringCLoud微服务的知识："></a>SpringCLoud微服务的知识：</h1><p>五大组件：</p>
+<h1 id="数据结构："><a href="#数据结构：" class="headerlink" title="数据结构："></a>数据结构：</h1><p>栈：</p>
+<p>链：</p>
+<p>哈希表：</p>
+<p>排序：</p>
+<p>二叉树：</p>
+<h2 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h2><h1 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h1><h1 id="前端知识："><a href="#前端知识：" class="headerlink" title="前端知识："></a>前端知识：</h1><p>js:</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/08/test-my-sit/" data-id="ckm237tqt0001q4ugeo5xe89j" data-title="test_my_sit" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/08/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-03-08T14:33:55.516Z" itemprop="datePublished">2021-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/08/hello-world/" data-id="ckm237tqp0000q4ug2in33a9j" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/08/test-my-sit/" data-id="ckm23ey6c0000moug5got5tj5" data-title="自己总结的知识" class="article-share-link">Share</a>
       
       
       
@@ -191,11 +227,7 @@
       <ul>
         
           <li>
-            <a href="/2021/03/08/test-my-sit/">test_my_sit</a>
-          </li>
-        
-          <li>
-            <a href="/2021/03/08/hello-world/">Hello World</a>
+            <a href="/2021/03/08/test-my-sit/">自己总结的知识</a>
           </li>
         
       </ul>
