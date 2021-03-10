@@ -96,7 +96,7 @@
         <h1 id="java："><a href="#java：" class="headerlink" title="java："></a>java：</h1><p>JDK和jre和JVM： </p>
 <p>java三大特性：封装，继承，多态</p>
 <p>重载和重写：</p>
-<p>抽象类和接口：为啥会使用抽象类？</p>
+<p>抽象类和接口：为   啥会使用抽象类？</p>
 <h2 id="集合：ArrayList-特别重要的HashMap："><a href="#集合：ArrayList-特别重要的HashMap：" class="headerlink" title="集合：ArrayList  特别重要的HashMap："></a>集合：ArrayList  特别重要的<strong>HashMap</strong>：</h2><p>Java集合中实际存放的只是对象的引用，每个集合元素都是一个引用变量，实际内容都放在堆内存或者方法区里面，但是基本数据类型是在栈内存上分配空间的，栈上的数据随时就会被收回的。</p>
 <h3 id="list集合：有序，可重复，元素有下标"><a href="#list集合：有序，可重复，元素有下标" class="headerlink" title="list集合：有序，可重复，元素有下标"></a>list集合：有序，可重复，元素有下标</h3><h4 id="ArrayList-基于数组"><a href="#ArrayList-基于数组" class="headerlink" title="ArrayList:基于数组"></a>ArrayList:基于数组</h4><p><strong>建议给一个初始化的值，减少扩容的次数</strong>，如果new 时参数为空，先创建一个空的对象数组，第一次执行add()会变为默认容量10；</p>
 <p> 扩容1.5倍(先检查数组长度为几，然后超过规定的长度，需要扩容，<strong>扩容机制：</strong>是你的初始化容量右移一位，相当于扩容原容量的1.5倍）</p>
@@ -133,7 +133,9 @@
 <p>堆：Java 虚拟机所管理的内存中最大的一块，Java 堆是<strong>所有线程共享的一块内存区域</strong>，在虚拟机启动时创建。<strong>此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例以及数组都在这里分配内存。</strong></p>
 <p>方法区：<strong>方法区与 Java 堆一样，是各个线程共享的内存区域，它用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做 Non-Heap（非堆），目的应该是与 Java 堆区分开来</strong></p>
 <p>JDK 1.8 的时候，方法区被彻底移除了（JDK1.7就已经开始了），取而代之是元空间，元空间使用的是直接内存。</p>
-<h2 id="垃圾处理的算法："><a href="#垃圾处理的算法：" class="headerlink" title="垃圾处理的算法："></a>垃圾处理的算法：</h2><h2 id="反射："><a href="#反射：" class="headerlink" title="反射："></a>反射：</h2><h1 id="Java有关数据连接的问题"><a href="#Java有关数据连接的问题" class="headerlink" title="Java有关数据连接的问题"></a>Java有关数据连接的问题</h1><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><h1 id="设计模式："><a href="#设计模式：" class="headerlink" title="设计模式："></a>设计模式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设计模式有23种，表示类与类之间的构架关系，表示对象的逻辑关系</span><br><span class="line"></span><br><span class="line">使用这些优秀的模式去搭建你的程序 无论从效率上还是可读性上，都给人一种很舒服的感觉。</span><br><span class="line"></span><br><span class="line">设计模式，即软件架构、实现思路，一方面便于后期扩展，二方面便于研发</span><br></pre></td></tr></table></figure>
+<h2 id="垃圾处理的算法："><a href="#垃圾处理的算法：" class="headerlink" title="垃圾处理的算法："></a>垃圾处理的算法：</h2><h2 id="反射："><a href="#反射：" class="headerlink" title="反射："></a>反射：</h2><h1 id="Java有关数据连接的问题"><a href="#Java有关数据连接的问题" class="headerlink" title="Java有关数据连接的问题"></a>Java有关数据连接的问题</h1><h2 id="JDBC："><a href="#JDBC：" class="headerlink" title="JDBC："></a>JDBC：</h2><more>
+
+<h1 id="设计模式："><a href="#设计模式：" class="headerlink" title="设计模式："></a>设计模式：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设计模式有23种，表示类与类之间的构架关系，表示对象的逻辑关系</span><br><span class="line"></span><br><span class="line">使用这些优秀的模式去搭建你的程序 无论从效率上还是可读性上，都给人一种很舒服的感觉。</span><br><span class="line"></span><br><span class="line">设计模式，即软件架构、实现思路，一方面便于后期扩展，二方面便于研发</span><br></pre></td></tr></table></figure>
 
 <h2 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h2><p>Java应用程序中，一个类Class只有一个实例存在。 使用Singleton的好处还在于可以<strong>节省内存</strong>，因为它限制了实例的个数，有利于Java垃圾回收（garbage collection）。</p>
 <h3 id="应用："><a href="#应用：" class="headerlink" title="应用："></a>应用：</h3><p>把这个计数器设计为一个全局对象，所有人都共用同一份数据，就可以避免类似的问题，这就是我们所说的单例模式的其中的一种应用。</p>
@@ -164,7 +166,9 @@
 <p>优化数据库：</p>
 <h2 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h2><p>特点：</p>
 <h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><p>五大基本数据类型：<br>命令</p>
-<h2 id="有关索引的问题"><a href="#有关索引的问题" class="headerlink" title="有关索引的问题"></a>有关索引的问题</h2><h1 id="Spring的知识"><a href="#Spring的知识" class="headerlink" title="Spring的知识"></a>Spring的知识</h1><p>IOC：</p>
+<h2 id="有关索引的问题"><a href="#有关索引的问题" class="headerlink" title="有关索引的问题"></a>有关索引的问题</h2><more>
+
+<h1 id="Spring的知识"><a href="#Spring的知识" class="headerlink" title="Spring的知识"></a>Spring的知识</h1><p>IOC：</p>
 <p>AOP:</p>
 <h3 id="注解：autoweird"><a href="#注解：autoweird" class="headerlink" title="注解：autoweird"></a>注解：autoweird</h3><h1 id="springMVC："><a href="#springMVC：" class="headerlink" title="springMVC："></a>springMVC：</h1><p>过程： </p>
 <p>注解：requestMapping：</p>
@@ -184,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/08/test-my-sit/" data-id="ckm23ey6c0000moug5got5tj5" data-title="自己总结的知识" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/03/08/test-my-sit/" data-id="ckm2x17yk000080ugbcoyapi8" data-title="自己总结的知识" class="article-share-link">Share</a>
       
       
       
