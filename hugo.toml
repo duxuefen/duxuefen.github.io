@@ -1,0 +1,19 @@
+baseURL = "https://duxuefen.github.io/"
+languageCode = "zh-CN"
+title = "我的个人博客"
+theme = "PaperMod"
+
+[params]
+  author = "duxuefen"
+  description = "这是我的 Hugo 博客"
+  defaultTheme = "auto"  # auto = 自动切换亮/暗色模式
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
